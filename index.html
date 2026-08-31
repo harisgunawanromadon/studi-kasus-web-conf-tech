@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studi Kasus Bootstrap 5 - TechFest 2026</title>
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body { font-family: -apple-system, Segoe UI, Roboto, sans-serif; }
+        .hero { background: linear-gradient(135deg,#1E3A8A,#2563EB); color:#fff; padding:90px 0; }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,.15); transition:.25s; }
+        .pricing-card.featured { border: 2px solid #2563EB; }
+        footer { background:#111827; color:#9CA3AF; }
+        .carousel-img { height: 350px; object-fit: cover; }
+    </style>
+</head>
+<body>
+
+<!-- 1. NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">TechFest 2026</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#pembicara">Pembicara</a></li>
+                <li class="nav-item"><a class="nav-link" href="#tiket">Tiket</a></li>
+                <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalDaftar">Daftar</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- 2. HERO SECTION -->
+<section class="hero text-center">
+    <div class="container">
+        <span class="badge bg-warning text-dark mb-3">12 - 13 September 2026 &middot; Jakarta</span>
+        <h1 class="display-5 fw-bold">Konferensi Teknologi untuk Generasi Digital</h1>
+        <p class="lead">Belajar AI, Web Development, dan Cloud Computing langsung dari para praktisi.</p>
+        <button class="btn btn-warning btn-lg mt-2 me-2" data-bs-toggle="modal" data-bs-target="#modalDaftar">Daftar Sekarang</button>
+        <a href="#pembicara" class="btn btn-outline-light btn-lg mt-2">Lihat Pembicara</a>
+    </div>
+</section>
+
+<!-- 3. ALERT INFO -->
+<div class="container mt-4">
+    <div class="alert alert-info d-flex align-items-center" role="alert">
+        <i class="bi bi-info-circle-fill me-2"></i>
+        <div>Kuota early bird tersisa <strong>32 tiket</strong> lagi. Daftar sebelum kehabisan!</div>
+    </div>
+</div>
+
+<!-- 4. PEMBICARA - CAROUSEL -->
+<section id="pembicara" class="container py-5">
+    <h2 class="text-center mb-4">Pembicara Utama</h2>
+    <div id="carouselPembicara" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="row justify-content-center text-center">
+                    <div class="col-md-4">
+                        <img src="./images/mikasa.webp" class="w-100 rounded mb-3 carousel-img" alt="Pembicara 1">
+                        <h5>Mikasa Ackerman</h5>
+                        <p class="text-muted">AI Engineer, Startup Nusantara</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row justify-content-center text-center">
+                    <div class="col-md-4">
+                        <img src="./images/eren.webp" class="w-100 rounded mb-3 carousel-img" alt="Pembicara 2">
+                        <h5>Eren Yeager</h5>
+                        <p class="text-muted">Frontend Lead, Techno Corp</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row justify-content-center text-center">
+                    <div class="col-md-4">
+                        <img src="./images/levi.webp" class="w-100 rounded mb-3 carousel-img" alt="Pembicara 3">
+                        <h5>Levi Ackerman</h5>
+                        <p class="text-muted">Cloud Architect, Skyline Cloud</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselPembicara" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" style="filter:invert(1)"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselPembicara" data-bs-slide="next">
+            <span class="carousel-control-next-icon" style="filter:invert(1)"></span>
+        </button>
+    </div>
+</section>
+
+<!-- 5. TIKET - PRICING CARD -->
+<section id="tiket" class="bg-light py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Pilihan Tiket</h2>
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-4">
+                <div class="card pricing-card h-100 text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Reguler</h5>
+                        <h3 class="fw-bold">Rp 150.000</h3>
+                        <ul class="list-unstyled text-muted mt-3">
+                            <li>Akses semua sesi</li>
+                            <li>E-sertifikat</li>
+                            <li>Snack</li>
+                        </ul>
+                        <button class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#modalDaftar">Pilih Tiket</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card pricing-card featured h-100 text-center">
+                    <div class="card-body">
+                        <span class="badge bg-primary mb-2">Paling Populer</span>
+                        <h5 class="card-title">VIP</h5>
+                        <h3 class="fw-bold">Rp 300.000</h3>
+                        <ul class="list-unstyled text-muted mt-3">
+                            <li>Semua fasilitas Reguler</li>
+                            <li>Meet & Greet Pembicara</li>
+                            <li>Merchandise eksklusif</li>
+                        </ul>
+                        <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalDaftar">Pilih Tiket</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 6. FAQ - ACCORDION -->
+<section id="faq" class="container py-5">
+    <h2 class="text-center mb-4">Pertanyaan Umum</h2>
+    <div class="accordion" id="accordionFAQ">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                    Apakah acara ini offline atau online?
+                </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#accordionFAQ">
+                <div class="accordion-body">Acara diselenggarakan secara offline di Jakarta, namun tersedia juga siaran langsung untuk peserta online.</div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                    Apakah tiket bisa dikembalikan?
+                </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                <div class="accordion-body">Tiket yang sudah dibeli tidak dapat dikembalikan, namun bisa dipindahtangankan ke orang lain.</div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                    Apakah mendapat sertifikat?
+                </button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                <div class="accordion-body">Ya, setiap peserta yang hadir sampai akhir akan mendapatkan e-sertifikat resmi.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 7. FOOTER -->
+<footer class="text-center py-4">
+    <p class="mb-1">&copy; 2026 TechFest — Studi Kasus Bootstrap 5</p>
+    <div>
+        <a href="https://www.instagram.com/harisgunawanr_" class="text-light me-3 pe-auto"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="text-light me-3"><i class="bi bi-twitter-x"></i></a>
+        <a href="#" class="text-light"><i class="bi bi-youtube"></i></a>
+    </div>
+</footer>
+
+<!-- 8. MODAL PENDAFTARAN -->
+<div class="modal fade" id="modalDaftar" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Formulir Pendaftaran</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formDaftar" class="needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label class="form-label" for="inputNama">Nama Lengkap</label>
+                        <input type="text" class="form-control" id="inputNama" placeholder="Masukkan nama Anda" required>
+                        <div class="invalid-feedback">Nama lengkap wajib diisi.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="inputEmail">Email</label>
+                        <input type="email" class="form-control" id="inputEmail" placeholder="nama@email.com" required>
+                        <div class="invalid-feedback">Email wajib diisi dan formatnya harus benar.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label pe-auto" for="inputTiket">Pilih Tiket</label>
+                        <select class="form-select" id="inputTiket">
+                            <option>Reguler - Rp 150.000</option>
+                            <option>VIP - Rp 300.000</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                <button type="button" id="btnKirimDaftar" class="btn btn-primary">Kirim Pendaftaran</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 9. TOAST NOTIFIKASI -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1100;">
+    <div id="toastSukses" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body">
+                <i class="bi bi-check-circle-fill me-2"></i>
+                Pendaftaran berhasil dikirim! Kami akan menghubungi Anda via email.
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+        </div>
+    </div>
+</div>
+
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script>
+    const formDaftar = document.getElementById('formDaftar');
+    const btnKirimDaftar = document.getElementById('btnKirimDaftar');
+    const toastSukses = new bootstrap.Toast(document.getElementById('toastSukses'));
+    const modalDaftarEl = document.getElementById('modalDaftar');
+    const modalDaftar = bootstrap.Modal.getOrCreateInstance(modalDaftarEl);
+
+    btnKirimDaftar.addEventListener('click', () => {
+        // Jika nama atau email kosong (atau format email salah), tampilkan pesan error
+        if (!formDaftar.checkValidity()) {
+            formDaftar.classList.add('was-validated');
+            return;
+        }
+
+        // Jika valid: tutup modal, reset form, lalu tampilkan toast sukses
+        modalDaftar.hide();
+        formDaftar.reset();
+        formDaftar.classList.remove('was-validated');
+        toastSukses.show();
+    });
+
+    // Reset status validasi setiap kali modal dibuka ulang
+    modalDaftarEl.addEventListener('show.bs.modal', () => {
+        formDaftar.classList.remove('was-validated');
+    });
+</script>
+</body>
+</html>
